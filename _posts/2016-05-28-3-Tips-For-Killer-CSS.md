@@ -10,7 +10,10 @@ tags:
   - CSS
   - SCSS
   - Style guide
+summary: Whether you're a seasoned front-end developer, or a CSS rookie, writing readable and maintainable styles can be really tough. But struggle no longer. I've written a comprehensive guide to writing super CSS.
+
 ---
+
 # Writing Good CSS is Hard
 
 Whether you're a seasoned front-end developer, or a CSS rookie, writing readable and maintainable styles can be really tough. But struggle no longer. I've written a comprehensive guide to writing super CSS. _N.B. I did steal the format from <a title="Open the Trello website (new tab)" href="http://trello.com/" rel="noopener no referrer">Trello</a>, but I've made some important updates._
