@@ -10,9 +10,9 @@ tags: gems
   {% for page in site.pages %}
       {% if page.tags == "gem" %}
         <a title="Read about the {{ page.title }} Gem" href="{{ site.baseurl }}{{ page.url }}">
-          <h1>
+          <h3 class="border m1 p1">
             {{ page.title }}
-          </h1>
+          </h3>
         </a>
       {% endif %}
   {% endfor %}
