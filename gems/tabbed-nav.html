@@ -9,10 +9,13 @@ tags: gem
 
 <p>
   <a title="View the end result (new tab)" href="http://alexpriceonline.com/frontendgems-tabbed-nav/" rel="noopener noreferrer" target="_blank">View example</a>
+</p>
+
+<p>
   <a title="Read the code (new tab)" href="https://github.com/alexpriceonline/frontendgems-tabbed-nav" rel="noopener noreferrer" target="_blank">View the repository</a>
 </p>
 
-<h3>The plan</h3>
+<h2>The plan</h2>
 
 <p>
   Today we're going to build
@@ -22,14 +25,14 @@ tags: gem
 </p>
 
 <p>
-  <img src="/images/tabbed_navigation.png" alt="UENO Tabbed navigation design">
+  <img src="https://raw.githubusercontent.com/alexpriceonline/blog/gh-pages/images/tabbed_navigation.png" alt="UENO Tabbed navigation design">
 </p>
 
-<h3>The build</h3>
+<h2>The build</h2>
 
 <p>The build for this gem is pretty straight forward. Lets break it down.</p>
 
-<h4>Markup</h5>
+<h3>Markup</h3>
 
 <p><em>Ellipsis represent omitted repeated code blocks.</em></p>
 
@@ -57,19 +60,19 @@ tags: gem
 {% endhighlight %}
 
 <p>
-  This HTML should be pretty self explanatory. We have a wrapping `div.tabs`,
-  a `nav.tabs-nav` containing the `a.tabs-nav-link` navigation links and
-  finally multiple `div.tabs-body`, containing the content for each tab.
+  This HTML should be pretty self explanatory. We have a wrapping <code>div.tabs</code>,
+  a <code>nav.tabs-nav</code> containing the <code>a.tabs-nav-link</code> navigation links and
+  finally multiple <code>div.tabs-body</code>, containing the content for each tab.
 </p>
 
 <p>
-  We use `.is-active` to indicate the currently selected tab. To keep our
+  We use <code>.is-active</code> to indicate the currently selected tab. To keep our
   Javascript concerns separate, we assign each navigation link and body
-  block a respective `.js-` class. This allows us to freely change the
+  block a respective <code>.js-</code> class. This allows us to freely change the
   classes that control the style of our widget without breaking the Javascript.
 </p>
 
-<h4>SCSS</h4>
+<h3>SCSS</h3>
 
 {% highlight scss %}
 .tabs {
@@ -199,16 +202,16 @@ tags: gem
   It includes all of the mixins and variables used in this example.
 </p>
 
-<h4>The navigation</h4>
+<h3>The navigation</h3>
 
 <p>
   The interesting SCSS starts in the block for the navigation links.
-  We use a `flex()` mixin to set our links to `flex-grow: 1;`, `flex-shrink: 0;`
-  and `flex-basis: auto;`.
+  We use a <code>flex()</code> mixin to set our links to <code>flex-grow: 1;</code>, <code>flex-shrink: 0;</code>
+  and <code>flex-basis: auto;</code>.
 </p>
 
 <p>
-  <img src="/images/frontendgems-tabbed-nav-responsive-276x300.png" alt="Responsive tabbed nav">
+  <img src="https://raw.githubusercontent.com/alexpriceonline/blog/gh-pages/images/frontendgems-tabbed-nav-responsive-276x300.png" alt="Responsive tabbed nav">
 </p>
 
 <p>
@@ -221,8 +224,8 @@ tags: gem
 <p>
   As the inspiration for this gem is just an image, I had to get creative
   with the responsiveness. I decided to keep it simple and break the nav
-  items onto a new line at \`480px\` (*`$small` from the boilerplate.*).
-  This is curtesy of `flex-wrap: wrap;` and
+  items onto a new line at <code>480px</code> (<em><code>$small</code> from the boilerplate.</em>).
+  This is curtesy of <code>flex-wrap: wrap;</code> and
 </p>
 
 {% highlight scss %}
@@ -233,24 +236,24 @@ width: calc(100% / 3);
 }
 {% endhighlight %}
 
-<h4>Icons</h4>
+<h3>Icons</h3>
 
 <p>
   The icons in the design were selected and downloaded from
   <a title="Open the Fontello website (new tab)" href="http://fontello.com/" rel="noopener noreferrer" target="_blank">Fontello</a>
-  . Their unicode's are assigned to the `content` attribute of their
-  corresponding `.mod-` class. The pseudo elements are positioned absolutely
-  inside of the link and use the `left: 0; right: 0;` trick to centre them.
+  . Their unicode's are assigned to the <code>content</code> attribute of their
+  corresponding <code>.mod-</code> class. The pseudo elements are positioned absolutely
+  inside of the link and use the <code>left: 0; right: 0;</code> trick to centre them.
 </p>
 
-<h4>Tab content</h4>
+<h3>Tab content</h3>
 
 <p>
   The body sections are simple. By default they're hidden with
-  `display: none;` and visible only when the active class is present.
+  <code>display: none;</code> and visible only when the active class is present.
 </p>
 
-<h3>Javascript</h3>
+<h2>Javascript</h2>
 
 {% highlight js %}
 var TabbedNav = (function() {
@@ -292,9 +295,9 @@ TabbedNav.init();
 {% endhighlight %}
 
 <p>
-  The JS for the tabbed nav is contained in one module. `TabbedNav` is an
-  anonymous function being used a as a closure to assign the `init()` method to
-  the global scope. We then can call `TabbedNav.init();` when the window is
+  The JS for the tabbed nav is contained in one module. <code>TabbedNav</code> is an
+  anonymous function being used a as a closure to assign the <code>init()</code> method to
+  the global scope. We then can call <code>TabbedNav.init();</code> when the window is
   ready, attaching the click event handler to the links.
 </p>
 
@@ -306,7 +309,7 @@ TabbedNav.init();
 </p>
 
 <p>
-  `_changeTab()` is a local method to handle `click` events from our links.
+  <code>_changeTab()</code> is a local method to handle <code>click</code> events from our links.
   The first thing to do is prevent any default actions attached to the event.
   We then remove the active classes from all of the links, add it back to the
   link from which the event came from, and record its zero-based index.
@@ -314,7 +317,7 @@ TabbedNav.init();
 
 </p>
   Finally, we remove the active class from all of our tab bodies, and re-add
-  it to the one corresponding to the clicked link—*bosh*.
+  it to the one corresponding to the clicked link—<em>bosh</em>.
 </p>
 
 <h3>Done</h3>
@@ -326,7 +329,7 @@ TabbedNav.init();
 </p>
 
 <p>
-  I want this to be the **ultimate tabbed-nav example**. If you see any
+  I want this to be the <strong>ultimate tabbed-nav example</strong>. If you see any
   mistakes, find any bugs or know of ways I can improve on the code,
   please get in touch or
   <a title="Open the jQuery website (new tab)" href="http://jquery.com/" rel="noopener noreferrer" target="_blank">raise an issue on Github</a>
@@ -335,5 +338,8 @@ TabbedNav.init();
 
 <p>
   <a title="View the end result (new tab)" href="http://alexpriceonline.com/frontendgems-tabbed-nav/" rel="noopener noreferrer" target="_blank">View the final result</a>
+</p>
+
+<p>
   <a title="Read the code (new tab)" href="https://github.com/alexpriceonline/frontendgems-tabbed-nav" rel="noopener noreferrer" target="_blank">View the repository</a>
 </p>
