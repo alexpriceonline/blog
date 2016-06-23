@@ -22,9 +22,9 @@ What’s not exciting however, is spending 2-3 hours setting up a new project ev
 
 I looked for an existing solution but couldn't find anything that fit my needs. All of the boilerplate projects I tested made assumptions about technologies, came with two many dependancies and in the end, **didn't actually save me time**.
 
-### So I built my own
+## So I built my own
 
-##### Introducing the FrontendGems Boilerplate
+### Introducing the FrontendGems Boilerplate
 
 The boilerplate is a barebones HTML and SCSS starter-kit. It makes starting a new web project a breeze and will have you up and coding in minutes.
 
