@@ -211,14 +211,14 @@ tags: gem
 </p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/alexpriceonline/blog/gh-pages/images/frontendgems-tabbed-nav-responsive-276x300.png" alt="Responsive tabbed nav">
-</p>
-
-<p>
   This causes each link to stretch out to an equal width
-  **without hardcoding a percentage** based on the number of items.
+  <strong>without hardcoding a percentage</strong> based on the number of items.
   Meaning the layout will continue to look sexy even if your client
   adds a new page—nice.
+</p>
+
+<p class="right">
+  <img src="https://raw.githubusercontent.com/alexpriceonline/blog/gh-pages/images/frontendgems-tabbed-nav-responsive-276x300.png" alt="Responsive tabbed nav">
 </p>
 
 <p>
@@ -228,13 +228,15 @@ tags: gem
   This is curtesy of <code>flex-wrap: wrap;</code> and
 </p>
 
-{% highlight scss %}
-width: calc(100% / 3);
+<div class="pr2">
+  {% highlight scss %}
+  width: calc(100% / 3);
 
-@include break(small) {
-    width: initial;
-}
-{% endhighlight %}
+  @include break(small) {
+      width: initial;
+  }
+  {% endhighlight %}
+</div>
 
 <h3>Icons</h3>
 
