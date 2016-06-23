@@ -20,11 +20,11 @@ This won't be a long post as the best advice I can give you is to go ahead and r
 
 If you like my approach or want to save the style guide for later, please _star_ing it on Github.
 
-<a title="Read the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide" rel="noopener noreferrer">Read the style guide</a>
+<a title="Read the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide" rel="noopener noreferrer" target="_blank">Read the style guide</a>
 
 ## 3 Things to Remember
 
-### 1. <a title="Open the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide#keeping-it-encapsulated" rel="noopener noreferrer">Keep it Encapsulated</a>
+### 1. <a title="Open the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide#keeping-it-encapsulated" rel="noopener noreferrer" target="_blank">Keep it Encapsulated</a>
 
 Every web page is made up of many elements. We can divide these _elements_ up into **components**. A component is a single, reusable chunk of HTML.
 
@@ -36,7 +36,8 @@ This may seem like overkill to some people, but it's super important. Giving eac
 
 The best way that I've found to manage this the `.component-child-grandchild` approach and indent each block of CSS equal to the level of ancestry.
 
-<a href="http://codepen.io/alexpriceonline/pen/jqgmwp/">See the CodePen</a>
+<p data-height="265" data-theme-id="0" data-slug-hash="jqgmwp" data-default-tab="html" data-user="alexpriceonline" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/alexpriceonline/pen/jqgmwp/">SCSS .component-child-grandchild example</a> by Alex Price (<a href="http://codepen.io/alexpriceonline">@alexpriceonline</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ### 3. Avoid `@extend` whenever possible
 
@@ -50,4 +51,4 @@ Another reason—this maybe less important to some people—is you're `super` co
 
 There is a lot to remember when writing awesome CSS. I use this guide as a cheatsheet and refer back to it on an almost daily basis.
 
-<a title="Read the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide" rel="noopener noreferrer">Read the full style guide</a>
+<a title="Read the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide" rel="noopener noreferrer" target="_blank">Read the full style guide</a>
