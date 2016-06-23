@@ -1,6 +1,7 @@
-<a href="{{ site.baseurl }}">Blog</a>
+<a title="Go to the main site" href="/">Main site</a>
+<a title="View all of my blog posts" href="{{ site.baseurl }}">Blog</a>
 {% for page in site.pages %}
     {% if page.tags contains "gems" %}
-      <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+      <a title="Read {{ page.title }}" href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
     {% endif %}
 {% endfor %}

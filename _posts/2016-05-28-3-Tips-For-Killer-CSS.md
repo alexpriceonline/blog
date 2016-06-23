@@ -4,7 +4,7 @@ summary: Whether you're a seasoned front-end developer, or a CSS rookie, writing
 date: 2016-05-28T11:03:10+00:00
 author: Alex Price
 layout: post
-permalink: /tips-for-great-css/
+permalink: /3-tips-for-great-css/
 categories:
   - tips
 tags:
