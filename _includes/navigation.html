@@ -1,5 +1,6 @@
+<a href="{{ site.baseurl }}">Blog home</a>
 {% for page in site.pages %}
     {% if page.tags contains "gems" %}
-        <a href="{{ page.url }}">{{ page.title }}</a>
+      <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
     {% endif %}
 {% endfor %}
