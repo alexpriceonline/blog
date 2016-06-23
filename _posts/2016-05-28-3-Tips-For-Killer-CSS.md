@@ -1,5 +1,6 @@
 ---
 title: 3 Key Points to Writing Killer CSS
+summary: Whether you're a seasoned front-end developer, or a CSS rookie, writing readable and maintainable styles can be really tough. But struggle no longer. I've written a comprehensive guide to writing super CSS.
 date: 2016-05-28T11:03:10+00:00
 author: Alex Price
 layout: post
@@ -10,17 +11,12 @@ tags:
   - CSS
   - SCSS
   - Style guide
-summary: Whether you're a seasoned front-end developer, or a CSS rookie, writing readable and maintainable styles can be really tough. But struggle no longer. I've written a comprehensive guide to writing super CSS.
-
 ---
-
 # Writing Good CSS is Hard
 
 Whether you're a seasoned front-end developer, or a CSS rookie, writing readable and maintainable styles can be really tough. But struggle no longer. I've written a comprehensive guide to writing super CSS. _N.B. I did steal the format from <a title="Open the Trello website (new tab)" href="http://trello.com/" rel="noopener no referrer">Trello</a>, but I've made some important updates._
 
 This won't be a long post as the best advice I can give you is to go ahead and read the style guide. But below I will list my top three things to remember.
-
-<!--more-->
 
 If you like my approach or want to save the style guide for later, please _star_ing it on Github.
 
