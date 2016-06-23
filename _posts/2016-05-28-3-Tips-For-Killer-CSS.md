@@ -12,7 +12,7 @@ tags:
   - SCSS
   - Style guide
 ---
-# Writing Good CSS is Hard
+## Writing Good CSS is Hard
 
 Whether you're a seasoned front-end developer, or a CSS rookie, writing readable and maintainable styles can be really tough. But struggle no longer. I've written a comprehensive guide to writing super CSS. _N.B. I did steal the format from <a title="Open the Trello website (new tab)" href="http://trello.com/" rel="noopener no referrer">Trello</a>, but I've made some important updates._
 
@@ -22,15 +22,15 @@ If you like my approach or want to save the style guide for later, please _star_
 
 <a title="Read the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide" rel="noopener noreferrer" target="_blank">Read the style guide</a>
 
-## 3 Things to Remember
+### 3 Things to Remember
 
-### 1. <a title="Open the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide#keeping-it-encapsulated" rel="noopener noreferrer" target="_blank">Keep it Encapsulated</a>
+#### 1. <a title="Open the style guide (new tab)" href="https://github.com/alexpriceonline/scss-style-guide#keeping-it-encapsulated" rel="noopener noreferrer" target="_blank">Keep it Encapsulated</a>
 
 Every web page is made up of many elements. We can divide these _elements_ up into **components**. A component is a single, reusable chunk of HTML.
 
 The point of _Encapsulation_ is to keep all of the styles associated with a component in it's own file and in it's own _namespace_. This will stop your components interfering with other components and prevents issues like having to override inherited styles. It also makes our files small, readable and maintainable.
 
-### 2. Avoid Nesting, Classes for Everything
+#### 2. Avoid Nesting, Classes for Everything
 
 This may seem like overkill to some people, but it's super important. Giving each piece of HTML a class allows us to really know what styles are being applied to it, and what _component_ it belongs to.
 
@@ -39,7 +39,7 @@ The best way that I've found to manage this the `.component-child-grandchild` ap
 <p data-height="265" data-theme-id="0" data-slug-hash="jqgmwp" data-default-tab="html" data-user="alexpriceonline" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/alexpriceonline/pen/jqgmwp/">SCSS .component-child-grandchild example</a> by Alex Price (<a href="http://codepen.io/alexpriceonline">@alexpriceonline</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-### 3. Avoid `@extend` whenever possible
+#### 3. Avoid `@extend` whenever possible
 
 `@extend` may seem like a wonderful, time saving feature of SCSS, but the second you use it your component is coupled with it's `super`. This is breaks our _'Keep it Encapsulated'_ rule from earlier.
 

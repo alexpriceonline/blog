@@ -14,7 +14,7 @@ tags:
   - HTML
   - JS
 ---
-# I hate new projects
+## I hate new projects
 
 Well, not really. I love the thrill of starting a new project. Designs and features floating around in my head, exciting stuff.
 
@@ -22,9 +22,7 @@ What’s not exciting however, is spending 2-3 hours setting up a new project ev
 
 I looked for an existing solution but couldn't find anything that fit my needs. All of the boilerplate projects I tested made assumptions about technologies, came with two many dependancies and in the end, **didn't actually save me time**.
 
-## So I built my own
-
-### Introducing the FrontendGems Boilerplate
+### So I built my own - Introducing the FrontendGems Boilerplate
 
 The boilerplate is a barebones HTML and SCSS starter-kit. It makes starting a new web project a breeze and will have you up and coding in minutes.
 
@@ -32,4 +30,4 @@ It has all of the basic things you need and none of the stuff you don’t. No Ja
 
 For a more in-depth look at what's included in the boilerplate, please read the full gem page or view the repository on GitHub.
 
-<a title="Checkout the gem (new tab)" href="https://github.com/alexpriceonline/frontendgems-boilerplate" rel="noopener noreferrer" target="_blank">Checkout the gem</a>
+<a title="Checkout the Gem (new tab)" href="https://github.com/alexpriceonline/frontendgems-boilerplate" rel="noopener noreferrer" target="_blank">Checkout the Gem</a>
