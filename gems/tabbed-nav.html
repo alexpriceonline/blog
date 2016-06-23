@@ -1,0 +1,290 @@
+This is a simple and complete example of a tabbed information block, perfect for displaying data on all screen types.
+
+<a title="View the end result (new tab)" href="http://alexpriceonline.com/frontendgems-tabbed-nav/" rel="noopener noreferrer" target="_blank">View example</a>
+<a title="Read the code (new tab)" href="https://github.com/alexpriceonline/frontendgems-tabbed-nav" rel="noopener noreferrer" target="_blank">View the repository</a>
+
+## The plan
+
+Today we’re going to build
+<a title="View insperation on dribbble (new tab)" href="https://dribbble.com/shots/1448829-Elastica-more/attachments/214085" rel="noopener noreferrer" target="_blank">this</a>
+gorgeous tabbed navigation design by
+<a title="View UENO's Twitter (new tab)" href="https://twitter.com/uenodotco" rel="noopener noreferrer" target="_blank">UENO</a>.
+
+![UENO Tabbed navigation design](/images/tabbed_navigation.png)
+
+## The build
+
+The build for this gem is pretty straight forward. Lets break it down.
+
+### Markup
+
+*Ellipsis represent omitted repeated code blocks.*
+
+{% highlight html %}
+<div class="tabs">
+    <nav class="tabs-nav">
+        <a class="tabs-nav-link is-active js-tabs-nav-link"
+           href="#">
+            Settings
+        </a>
+        ...
+    </nav>
+
+    <div class="tabs-body is-active js-tabs-body">
+        <h1 class="tabs-body-heading">
+            Settings
+        </h1>
+        <a class="tabs-body-link"
+           href="http://frontendgems.com/">
+            FrontendGems
+        </a>
+    </div>
+    ...
+</div>
+{% endhighlight %}
+
+See the Pen [Tabbed nav markup (simple)] by Alex Price ([@alexpriceonline]) on [CodePen].
+
+<script async src="//codepen.io/assets/embed/ei.js">#</script>
+
+This HTML should be pretty self explanatory. We have a wrapping `div.tabs`, a `nav.tabs-nav` containing the `a.tabs-nav-link` navigation links and finally multiple `div.tabs-body`, containing the content for each tab.
+
+We use `.is-active` to indicate the currently selected tab. To keep our Javascript concerns separate, we assign each navigation link and body block a respective `.js-` class. This allows us to freely change the classes that control the style of our widget without breaking the Javascript.
+
+### SCSS
+
+{% highlight scss %}
+.tabs {
+    margin: 0 auto;
+
+    @include break(large) {
+        width: rem(920px);
+    }
+}
+
+    .tabs-nav {
+        @include flexbox();
+        @include flex-wrap(wrap);
+    }
+
+        .tabs-nav-link {
+            @include flex(1 0 auto);
+            @include fontSize(15px);
+            @include transition(border-top 0.2s ease-in);
+            background: $tab-colour;
+            border-bottom: rem(1px) solid $bg-colour;
+            border-right: rem(1px) solid $bg-colour;
+            border-top: rem(4px) solid transparent;
+            color: $text-colour;
+            cursor: pointer;
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            width: calc(100% / 3);
+            padding: rem(35px 0 15px);
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+
+            &:last-of-type {
+                border-right: none;
+            }
+
+            @include break(small) {
+                width: initial;
+            }
+        }
+
+        .tabs-nav-link:focus,
+        .tabs-nav-link:hover {
+            border-top-color: $text-colour;
+        }
+
+        .tabs-nav-link.is-active {
+            background: $white;
+            border-bottom-color: transparent;
+            border-top-color: $highlight-colour;
+            color: $highlight-colour;
+        }
+
+        // Default settings
+        .tabs-nav-link::after {
+            @include fontSize(16px);
+            content: '\e804';
+            font-family: 'fontello';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: rem(14px);
+        }
+
+        .tabs-nav-link.mod-contact::after {
+            content: '\e802';
+        }
+
+        .tabs-nav-link.mod-gateway::after {
+            content: '\e801';
+        }
+
+        .tabs-nav-link.mod-sso::after {
+            content: '\e800';
+        }
+
+        .tabs-nav-link.mod-billing::after {
+            content: '\e805';
+        }
+
+    .tabs-body {
+        background: $white;
+        border-bottom: rem(2px) solid $highlight-colour;
+        display: none;
+        padding: rem(40px 20px);
+        text-align: center;
+    }
+
+    .tabs-body.is-active {
+        display: block;
+    }
+
+        .tabs-body-heading {
+            @include fontSize(30px);
+            color: $text-colour;
+            margin: rem(0 0 10px);
+        }
+
+        .tabs-body-link {
+            @extend .tabs-body-heading;
+            @include fontSize(24px);
+            border-bottom: rem(2px) dashed $highlight-colour;
+            color: $highlight-colour;
+            text-decoration: none;
+        }
+
+        .tabs-body-link:focus,
+        .tabs-body-link:hover {
+            border-bottom-style: solid;
+        }
+{% endhighlight %}
+
+**Mixin alert**: This gem’s SCSS uses quite a few mixins.
+If you’re not familiar with how mixins work, please read the awesome
+<a title="View the Sass Basic's site (new tab)" href="http://sass-lang.com/guide" rel="noopener noreferrer" target="_blank">Sass Basics</a>
+page and save yourself some confusion.
+
+This gem is built on top of the
+<a title="View the FrontendGems Boilerplate (new tab)" href="https://github.com/alexpriceonline/frontendgems-boilerplate" rel="noopener noreferrer" target="_blank">FrontendGems boilerplate</a>
+, so if you’ve not
+seen that, it might be worth having a scan over.
+It includes all of the mixins and variables used in this example.
+
+#### The navigation
+
+The interesting SCSS starts in the block for the navigation links.
+We use a `flex()` mixin to set our links to `flex-grow: 1;`, `flex-shrink: 0;`
+and `flex-basis: auto;`.
+
+![Responsive tabbed nav](/images/frontendgems-tabbed-nav-responsive-276x300.png)
+
+This causes each link to stretch out to an equal width
+**without hardcoding a percentage** based on the number of items.
+Meaning the layout will continue to look sexy even if your client
+adds a new page—nice.
+
+As the inspiration for this gem is just an image, I had to get creative
+with the responsiveness. I decided to keep it simple and break the nav
+items onto a new line at \`480px\` (*`$small` from the boilerplate.*).
+This is curtesy of `flex-wrap: wrap;` and
+
+{% highlight scss %}
+width: calc(100% / 3);
+
+@include break(small) {
+    width: initial;
+}
+{% endhighlight %}
+
+#### Icons
+
+The icons in the design were selected and downloaded from
+<a title="Open the Fontello website (new tab)" href="http://fontello.com/" rel="noopener noreferrer" target="_blank">Fontello</a>
+. Their unicode’s are assigned to the `content` attribute of their
+corresponding `.mod-` class. The pseudo elements are positioned absolutely
+inside of the link and use the `left: 0; right: 0;` trick to centre them.
+
+#### Tab content
+
+The body sections are simple. By default they’re hidden with `display: none;` and visible only when the active class is present.
+
+### Javascript
+
+{% highlight js %}
+var TabbedNav = (function() {
+
+    // Module variable decleration
+    var _$tab_nav_link = $('.js-tabs-nav-link'),
+        _$tab = $('.js-tabs-body'),
+        _active_class = 'is-active';
+
+    // Click event handler for tab nav links.
+    // Displays the appropriate tab
+    function _changeTab(event) {
+        event.preventDefault();
+
+        // Change active state of tab nav links
+        _$tab_nav_link.removeClass(_active_class);
+        var index = $(this).addClass(_active_class)
+                           .index();
+
+        // Change active state of tab
+        _$tab.removeClass(_active_class)
+             .eq(index)
+             .addClass(_active_class);
+    }
+
+    // Initialise the module by binding the event handlers
+    function init() {
+        _$tab_nav_link.click(_changeTab);
+    }
+
+    // Export this method
+    return {
+        init: init
+    };
+
+})();
+
+TabbedNav.init();
+{% endhighlight %}
+
+The JS for the tabbed nav is contained in one module. `TabbedNav` is an
+anonymous function being used a as a closure to assign the `init()` method to
+the global scope. We then can call `TabbedNav.init();` when the window is
+ready, attaching the click event handler to the links.
+
+To save repeating ourselves, we start by creating local variables for our
+links, tab bodies and our active class. We are using
+<a title="Open the jQuery website (new tab)" href="http://jquery.com/" rel="noopener noreferrer" target="_blank">jQuery</a>
+to keep our code simple.
+
+`_changeTab()` is a local method to handle `click` events from our links.
+The first thing to do is prevent any default actions attached to the event.
+We then remove the active classes from all of the links, add it back to the
+link from which the event came from, and record its zero-based index.
+
+Finally, we remove the active class from all of our tab bodies, and re-add
+it to the one corresponding to the clicked link—*bosh*.
+
+### Done
+
+I am consistently surprised by the amount of code I see in examples of this
+sort of thing online. I hope this version shows it doesn’t need to be that
+complicated.
+
+I want this to be the **ultimate tabbed-nav example**. If you see any
+mistakes, find any bugs or know of ways I can improve on the code,
+please get in touch or
+<a title="Open the jQuery website (new tab)" href="http://jquery.com/" rel="noopener noreferrer" target="_blank">raise an issue on Github</a>
+! Cheers.
+
+<a title="View the end result (new tab)" href="http://alexpriceonline.com/frontendgems-tabbed-nav/" rel="noopener noreferrer" target="_blank">View the final result</a>
+<a title="Read the code (new tab)" href="https://github.com/alexpriceonline/frontendgems-tabbed-nav" rel="noopener noreferrer" target="_blank">View the repository</a>
