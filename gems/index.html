@@ -6,10 +6,14 @@ tags: gems
 ---
 
 <div class="py2">
-  ## FrontendGems
+  <p>I built FrontendGems in an attempt to create a collection of the finest web components, and a place where leading developers could collaborate to solve real world problems with the most elegant solution.</p>
   {% for page in site.pages %}
-      {% if page.tags contains "gem" %}
-        <a title="Read about the {{ page.title }} Gem" href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+      {% if page.tags == "gem" %}
+        <a title="Read about the {{ page.title }} Gem" href="{{ site.baseurl }}{{ page.url }}">
+          <h1>
+            {{ page.title }}
+          </h1>
+        </a>
       {% endif %}
   {% endfor %}
 </div>
