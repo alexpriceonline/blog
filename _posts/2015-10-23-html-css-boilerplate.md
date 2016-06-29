@@ -3,6 +3,7 @@ title: How I save hours setting up new projects
 summary: The boilerplate is a barebones HTML and SCSS starter-kit. It makes starting a new web project a breeze and will have you up and coding in minutes.
 date: 2015-10-23T18:21:42+00:00
 author: Alex Price
+meta_description: The FrontendGems boilerplate is a lightweight front-end starter kit project consisting of a simple directory structure and SCSS processing using Gulp.
 layout: post
 permalink: /html-css-boilerplate/
 categories:
@@ -14,6 +15,7 @@ tags:
   - HTML
   - JS
 ---
+
 ## I hate new projects
 
 Well, not really. I love the thrill of starting a new project. Designs and features floating around in my head, exciting stuff.
