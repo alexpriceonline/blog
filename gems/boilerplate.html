@@ -1,0 +1,208 @@
+---
+layout: page
+title: Boilerplate
+permalink: /gems/boilerplate/
+tags: gem
+---
+
+<p>
+  The boilerplate is a barebones HTML and SCSS starter-kit. It makes starting
+  simple front-end projects a breeze and will have you up and coding
+  in minutes.
+</p>
+
+<p>
+  <a title="View the boilerplate on Github (new tab)" href="https://github.com/alexpriceonline/frontendgems-boilerplate" rel="noopener noreferrer" target="_blank">View on Github</a>
+</p>
+
+<h2>So what's included?</h2>
+
+<p>
+  <code>src</code> is where all of the un-processed files should live
+  (SCSS, uncompressed JS or Coffeescript etc.).
+  <em>The boilerplate is Javascript processing independent</em>.
+</p>
+
+<pre><code>src
+└── scss
+    ├── base
+    │   ├── _colors.scss
+    │   └── _global.scss
+    ├── mixins
+    │   ├── _break.scss
+    │   ├── _clearfix.scss
+    │   ├── _font-size.scss
+    │   └── _rem.scss
+    ├── modules
+    ├── vendor
+    │   └── _normalize.scss
+    ├── _variables.scss
+    └── styles.scss
+</code></pre>
+
+<h3>Directory walkthrough</h3>
+
+<h4>base/</h4>
+
+<p>
+  Put global stuff here. <code>_grid.scss</code> would be a good example.
+</p>
+
+<ul>
+	<li>_colors.scss is for colour variable declarations.</li>
+	<li>
+    _global.scss is for site-wide styles (global <code>box-sizing</code> etc.).
+  </li>
+</ul>
+
+<h4>mixins/</h4>
+
+<p>
+  SCSS mixins go here—<em>duh</em>. Mixins currently included are:
+</p>
+
+<h5><strong>break</strong> : a simple responsive breakpoint mixin.</h5>
+
+The boilerplate is mobile-first, code inside <code>break($size)</code>
+blocks are applied when the browser is larger than <code>$size</code>.
+
+<p>
+  In this example <code>small</code> is being used, meaning the
+  <code>display: inline-block;</code> and <code>float: left;</code> properties
+  are applied to <code>.footer-logo-link</code> whenever the browser width
+  is larger than the values of <code>$small</code>
+  (declared in _variables.scss).
+</p>
+
+<pre><code>.footer-logo-link {
+    display: block;
+    height: rem(55px);
+
+    @include break(small) {
+        display: inline-block;
+        float: left;
+    }
+}
+</code></pre>
+
+<h5><strong>clearfix</strong> : a simple float clearing mixin.</h5>
+
+<p>
+  Including <code>@import clearfix();</code> in a style block will stop it
+  collapsing if elements inside are floated.
+</p>
+
+<h5><strong>font-size</strong> : a <code>rem</code> based font-size fallback mixin.</h5>
+
+<p>
+  Some browsers do not support <code>rem</code> based font
+  sizes—<em>Damn you IE9-10</em>. This mixin simply provides both the
+  <code>rem</code> version and a <code>px</code> fallback in one line.
+</p>
+
+<pre><code>.footer-project-title {
+    @include fontSize(14px);
+    ...
+}
+
+// Outputs
+.footer-project-title {
+    font-size: 14px;
+    font-size: rem(14px); // rem calculation, see below.
+    ...
+}
+</code></pre>
+
+<h5><strong>rem</strong> : a <code>px</code> to <code>rem</code> conversion mixin.</h5>
+
+<p>
+  The <code>rem</code> mixin is the most complecated, but most useful
+  mixin in the boilerplate.
+</p>
+
+<p>
+  It saves you bags of time by letting you write all CSS sizes in your beloved
+  <code>px</code>. The SCSS processor converts them all into the
+  <code>rem</code> equivelent (based on the <code>$rem-base</code> variable).
+</p>
+
+<p>
+  It accepts multiple inputs and although it isn’t required, I always
+  write the <code>px</code> suffix to keep things explicit.
+</p>
+
+<p>
+  Padding is a great example (assuming <code>$gutter: 18px</code> and
+  <code>$rem-base: 16px</code>):
+</p>
+
+<pre><code>padding: rem(0 $gutter);
+
+// Outputs
+padding: 0 1.125rem;
+</code></pre>
+
+<h4>modules/</h4>
+
+<p>
+  Put your self-contained components here.
+</p>
+
+<h4>vendor/</h4>
+
+<p>
+  The vendor directory is where you should put all of your 3rd party style
+  sheets. The boilerplate comes with
+  <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize</a>.
+</p>
+
+<h4>_variables.scss</h4>
+
+<p>
+  This is where you should declare your basic variables. Things like
+  <code>$rem-base</code> size and responsive break point values.
+</p>
+
+<h4>_styles.scss</h4>
+
+<p>
+  This is the main import file. All of the above should be referenced here;
+  seperated by folder and sorted alphabetically.
+</p>
+
+<p>
+  Sometimes you may find file imports are dependant on other files and
+  need to be places below them (out of alphabetical order). This
+  is fine, just place a comment after the import stating the dependancy.
+</p>
+
+<h3>Gulp</h3>
+
+<p>
+  I'm not a massive fan of front-end build systems. But with open source
+  projects it is important to have consistancy between developers.
+  <a title="View the Gulp.js website (new tab)" href="http://gulpjs.com" rel="noopener noreferrer" target="_blank">Gulp</a>
+  is super simple
+  and can be extended easiliy on a project to project basis.
+</p>
+
+<p>
+  The Gulp setup that comes with this boilerplate is soley for SCSS
+  processing and improses no Javascript opionion on the developer. That
+  being said, my personal preference is to keep code as vanilla as
+  possible; #NoCoffeeScriptHere.
+</p>
+
+<h2>And that's it</h2>
+
+<p>
+  It's as simple as that. This a super fast and lightweight way to kick
+  off a new front-end project. <strong>But wait!</strong> I need your
+  help to make the boilerplate even better. Please consider contributing
+  to the project. Every commit, comment and share will help to make this
+  the best boilerplate possible.
+</p>
+
+<p>
+  <a title="Read the code (new tab)" href="https://github.com/alexpriceonline/frontendgems-boilerplate" rel="noopener noreferrer" target="_blank">View the repository</a>
+</p>
