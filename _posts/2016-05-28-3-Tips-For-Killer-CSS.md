@@ -2,7 +2,7 @@
 title: 3 Key Points to Writing Killer CSS
 summary: Whether you're a seasoned front-end developer, or a CSS rookie, writing readable and maintainable styles can be really tough. But struggle no longer. I've written a comprehensive guide to writing super CSS.
 date: 2016-05-28T11:03:10+00:00
-meta_description: Learn my three favourite tips for writing clean, maintainable and scalable CSS :: FrontendGems
+meta_description: Learn my three favourite tips for writing clean, maintainable and scalable CSS
 author: Alex Price
 layout: post
 permalink: /3-tips-for-great-css/
