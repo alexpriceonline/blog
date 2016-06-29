@@ -75,7 +75,8 @@ blocks are applied when the browser is larger than <code>$size</code>.
   (declared in _variables.scss).
 </p>
 
-<pre><code>.footer-logo-link {
+{% highlight scss %}
+.footer-logo-link {
     display: block;
     height: rem(55px);
 
@@ -84,7 +85,7 @@ blocks are applied when the browser is larger than <code>$size</code>.
         float: left;
     }
 }
-</code></pre>
+{% endhighlight %}
 
 <h5><strong>clearfix</strong> : a simple float clearing mixin.</h5>
 
@@ -101,7 +102,8 @@ blocks are applied when the browser is larger than <code>$size</code>.
   <code>rem</code> version and a <code>px</code> fallback in one line.
 </p>
 
-<pre><code>.footer-project-title {
+{% highlight scss %}
+.footer-project-title {
     @include fontSize(14px);
     ...
 }
@@ -112,7 +114,7 @@ blocks are applied when the browser is larger than <code>$size</code>.
     font-size: rem(14px); // rem calculation, see below.
     ...
 }
-</code></pre>
+{% endhighlight %}
 
 <h5><strong>rem</strong> : a <code>px</code> to <code>rem</code> conversion mixin.</h5>
 
@@ -137,11 +139,12 @@ blocks are applied when the browser is larger than <code>$size</code>.
   <code>$rem-base: 16px</code>):
 </p>
 
-<pre><code>padding: rem(0 $gutter);
+{% highlight scss %}
+padding: rem(0 $gutter);
 
 // Outputs
 padding: 0 1.125rem;
-</code></pre>
+{% endhighlight %}
 
 <h4>modules/</h4>
 
